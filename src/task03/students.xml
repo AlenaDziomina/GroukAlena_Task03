@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<ns1:students
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns:ns1='http://www.example.com/students'
+    xsi:schemaLocation='http://www.example.com/students students.xsd'>
+    <ns1:student login="ivanov555" faculty="mmf">
+        <ns1:name>Ivanov Ivan</ns1:name>
+        <ns1:telephone>1234567</ns1:telephone>
+        <ns1:address>
+            <ns1:country>Belarus</ns1:country>
+            <ns1:city>Misnk</ns1:city>
+            <ns1:street>Lenina 56-45</ns1:street>
+        </ns1:address>
+    </ns1:student>
+    <ns1:student login="petrov777" faculty="mmf">
+        <ns1:name>Petrov petr</ns1:name>
+        <ns1:telephone>4445656</ns1:telephone>
+        <ns1:address>
+            <ns1:country>Belarus</ns1:country>
+            <ns1:city>Brest</ns1:city>
+            <ns1:street>Lenina 1</ns1:street>
+        </ns1:address>
+    </ns1:student>
+    <ns1:student login="Sidorov13" faculty="mmf">
+        <ns1:name>Sidorov Vova</ns1:name>
+        <ns1:telephone>1112233</ns1:telephone>
+        <ns1:address>
+            <ns1:country>Belarus</ns1:country>
+            <ns1:city>Gomel</ns1:city>
+            <ns1:street>Gagarina 26-45</ns1:street>
+        </ns1:address>
+    </ns1:student>
+
+</ns1:students>
