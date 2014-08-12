@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+
+<motoequipment
+    xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+    xmlns='http://epam.by/motoequip'
+    xsi:schemaLocation='http://epam.by/motoequip equip.xsd'>
+    
+    <helmet id="1" name="520 CARBON">
+        <manufacturer>ROCC</manufacturer>
+        <price>300</price>
+        <weight>1.210</weight>
+        <shellMaterial>Carbon</shellMaterial>
+        <insertMaterial>HydraDry</insertMaterial>
+        <vents>7</vents>
+        <sunVisor>true</sunVisor>
+        <headsetConnector>false</headsetConnector>
+        <admissionGp>false</admissionGp>
+    </helmet>
+    <helmet id="2" name="524 FIBERGLASS">
+        <manufacturer>ROCC</manufacturer>
+        <price>170</price>
+        <weight>1.450</weight>
+        <shellMaterial>Fiberglass</shellMaterial>
+        <insertMaterial>HydraDry</insertMaterial>
+        <vents>5</vents>
+        <sunVisor>true</sunVisor>
+        <headsetConnector>false</headsetConnector>
+        <admissionGp>false</admissionGp>
+    </helmet>
+    <helmet id="3" name="482 COOL">
+        <manufacturer>ROCC</manufacturer>
+        <price>160</price>
+        <weight>1.450</weight>
+        <shellMaterial>ABS</shellMaterial>
+        <insertMaterial>Silver Cool</insertMaterial>
+        <vents>7</vents>
+        <sunVisor>true</sunVisor>
+        <headsetConnector>false</headsetConnector>
+        <admissionGp>false</admissionGp>
+    </helmet>
+
+</motoequipment>

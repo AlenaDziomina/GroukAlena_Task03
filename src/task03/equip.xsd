@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://epam.by/motoequip"
+        xmlns:tns="http://epam.by/motoequip"
+            elementFormDefault="qualified">
+        <element name="motoequipment">
+            <complexType>
+                <sequence>
+                    <element ref="tns:motoEquipment"
+                            minOccurs="2"
+                            maxOccurs="unbounded"/>
+                </sequence>
+            </complexType>
+        </element>
+        <element name="motoEquipment" type="tns:MotoEquipment" abstract="true"></element>
+        <element name="helmet" type="tns:Helmet" substitutionGroup="tns:motoEquipment"></element>
+        <element name="shoes" type="tns:Shoes" substitutionGroup="tns:motoEquipment"></element>
+        <complexType name="MotoEquipment">
+            <sequence>
+                <element name="manufacturer" type="string"></element>
+                <element name="price" type="positiveInteger"></element>
+                <element name="weight" type="float"></element>
+            </sequence>
+            <attribute name="id" type="integer" use="required"/>
+            <attribute name="name" type="string" use="required"/>
+        </complexType>
+        <complexType name="Helmet">
+            <complexContent>
+                <extension base="tns:MotoEquipment">
+                    <sequence>
+                        <element name="shellMaterial" type="string"></element>
+                        <element name="insertMaterial" type="string"></element>
+                        <element name="vents" type="positiveInteger"></element>
+                        <element name="sunVisor" type="boolean"></element>
+                        <element name="headsetConnector" type="boolean"></element>
+                        <element name="admissionGp" type="boolean"></element>
+                    </sequence>
+                </extension>
+            </complexContent>
+        </complexType>
+        <complexType name="Shoes">
+            <complexContent>
+                <extension base="tns:MotoEquipment">
+                    <sequence>
+                        <element name="baseMaterial" type="string"></element>
+                        <element name="protectionMaterial" type="string"></element>
+                        <element name="mountType" type="string"></element>
+                    </sequence>
+                </extension>
+            </complexContent>
+        </complexType>
+    </schema>
