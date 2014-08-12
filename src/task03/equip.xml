@@ -47,5 +47,14 @@ and open the template in the editor.
         <headsetConnector>false</headsetConnector>
         <admissionGp>false</admissionGp>
     </helmet>
+    <visor id="4" name="sunVisor">
+        <manufacturer>ROCC</manufacturer>
+        <price>10</price>
+        <weight>0.050</weight>
+        <forWhat>
+            2 3
+        </forWhat>
+        <antiblic>true</antiblic>
+    </visor>
 
 </motoequipment>

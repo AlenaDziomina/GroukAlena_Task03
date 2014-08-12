@@ -15,8 +15,16 @@
         <element name="motoEquipment" type="tns:MotoEquipment" abstract="true"></element>
         <element name="baseMotoEquipment" type="tns:BaseMotoEquipment" abstract="true"></element>
         <element name="mainEquip" type="tns:MainEquip" abstract="true"></element>
+        <element name="specialMotoEquipment" type="tns:SpecialMotoEquipment" abstract="true"></element>
+        <element name="additionalMotoEquipment" type="tns:AdditionalMotoEquipment" abstract="true"></element>
+        <element name="bodyProtection" type="tns:BodyProtection" abstract="true"></element>
+        <element name="builtInBodyProtection" type="tns:BuiltInBodyProtection" abstract="true"></element>
+        <element name="separateBodyProtection" type="tns:SeparateBodyProtection" abstract="true"></element>
         <element name="helmet" type="tns:Helmet" substitutionGroup="tns:motoEquipment"></element>
         <element name="shoes" type="tns:Shoes" substitutionGroup="tns:motoEquipment"></element>
+        <element name="jacket" type="tns:Jacket" substitutionGroup="tns:motoEquipment"></element>
+        <element name="pants" type="tns:Pants" substitutionGroup="tns:motoEquipment"></element>
+        <element name="visor" type="tns:Visor" substitutionGroup="tns:motoEquipment"></element>
         <complexType name="MotoEquipment">
             <sequence>
                 <element name="manufacturer" type="string"></element>
@@ -40,6 +48,64 @@
                             </restriction>
                         </simpleType>
                     </attribute>
+                </extension>
+            </complexContent>
+        </complexType>
+        <complexType name="SpecialMotoEquipment">
+            <complexContent>
+                <extension base="tns:MotoEquipment">
+                    <sequence>
+                        <element name="forWhat" >
+                            <simpleType>
+                                <list itemType="integer"></list>
+                            </simpleType>
+                        </element>
+                    </sequence>
+                </extension>
+            </complexContent>
+        </complexType>
+        <complexType name="Visor">
+            <complexContent>
+                <extension base="tns:SpecialMotoEquipment">
+                    <sequence>
+                        <element name="antiblic" type="boolean"></element>
+                    </sequence>
+                </extension>
+            </complexContent>
+        </complexType>
+        <complexType name="AdditionalMotoEquipment">
+            <complexContent>
+                <extension base="tns:BaseMotoEquipment">
+                </extension>
+            </complexContent>
+        </complexType>
+        <complexType name="BodyProtection">
+            <complexContent>
+                <extension base="tns:MainEquip">
+                </extension>
+            </complexContent>
+        </complexType>
+        <complexType name="BuiltInBodyProtection">
+            <complexContent>
+                <extension base="tns:BodyProtection">
+                </extension>
+            </complexContent>
+        </complexType>
+        <complexType name="SeparateBodyProtection">
+            <complexContent>
+                <extension base="tns:BodyProtection">
+                </extension>
+            </complexContent>
+        </complexType>
+        <complexType name="Jacket">
+            <complexContent>
+                <extension base="tns:BuiltInBodyProtection">
+                </extension>
+            </complexContent>
+        </complexType>
+        <complexType name="Pants">
+            <complexContent>
+                <extension base="tns:BuiltInBodyProtection">
                 </extension>
             </complexContent>
         </complexType>
