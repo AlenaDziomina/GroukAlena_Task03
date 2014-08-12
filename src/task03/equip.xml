@@ -11,10 +11,11 @@ and open the template in the editor.
     xmlns='http://epam.by/motoequip'
     xsi:schemaLocation='http://epam.by/motoequip equip.xsd'>
     
-    <helmet id="1" name="520 CARBON">
+    <helmet id="1" name="520 CARBON" size="XL" genderStyle="M" helmetType="INTEGRAL">
         <manufacturer>ROCC</manufacturer>
         <price>300</price>
         <weight>1.210</weight>
+        <motoType>COMMON</motoType>
         <shellMaterial>Carbon</shellMaterial>
         <insertMaterial>HydraDry</insertMaterial>
         <vents>7</vents>
@@ -22,10 +23,11 @@ and open the template in the editor.
         <headsetConnector>false</headsetConnector>
         <admissionGp>false</admissionGp>
     </helmet>
-    <helmet id="2" name="524 FIBERGLASS">
+    <helmet id="2" name="524 FIBERGLASS" size="XL" genderStyle="Y" helmetType="INTEGRAL">
         <manufacturer>ROCC</manufacturer>
         <price>170</price>
         <weight>1.450</weight>
+        <motoType>ENDURO</motoType>
         <shellMaterial>Fiberglass</shellMaterial>
         <insertMaterial>HydraDry</insertMaterial>
         <vents>5</vents>
@@ -33,10 +35,11 @@ and open the template in the editor.
         <headsetConnector>false</headsetConnector>
         <admissionGp>false</admissionGp>
     </helmet>
-    <helmet id="3" name="482 COOL">
+    <helmet id="3" name="482 COOL" size="XL">
         <manufacturer>ROCC</manufacturer>
         <price>160</price>
         <weight>1.450</weight>
+        <motoType></motoType>
         <shellMaterial>ABS</shellMaterial>
         <insertMaterial>Silver Cool</insertMaterial>
         <vents>7</vents>
