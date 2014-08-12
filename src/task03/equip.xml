@@ -11,7 +11,7 @@ and open the template in the editor.
     xmlns='http://epam.by/motoequip'
     xsi:schemaLocation='http://epam.by/motoequip equip.xsd'>
     
-    <helmet id="1" name="520 CARBON" size="XL" genderStyle="M" helmetType="INTEGRAL">
+    <helmet id="1" name="520 CARBON" size="XL" genderStyle="M" helmetType="INTEGRAL" >
         <manufacturer>ROCC</manufacturer>
         <price>300</price>
         <weight>1.210</weight>
@@ -22,6 +22,7 @@ and open the template in the editor.
         <sunVisor>true</sunVisor>
         <headsetConnector>false</headsetConnector>
         <admissionGp>false</admissionGp>
+        <test>test1</test>
     </helmet>
     <helmet id="2" name="524 FIBERGLASS" size="XL" genderStyle="Y" helmetType="INTEGRAL">
         <manufacturer>ROCC</manufacturer>
@@ -34,6 +35,7 @@ and open the template in the editor.
         <sunVisor>true</sunVisor>
         <headsetConnector>false</headsetConnector>
         <admissionGp>false</admissionGp>
+        <test>test2</test>
     </helmet>
     <helmet id="3" name="482 COOL" size="XL">
         <manufacturer>ROCC</manufacturer>
@@ -46,6 +48,7 @@ and open the template in the editor.
         <sunVisor>true</sunVisor>
         <headsetConnector>false</headsetConnector>
         <admissionGp>false</admissionGp>
+        <test>test1</test>
     </helmet>
 
 </motoequipment>
