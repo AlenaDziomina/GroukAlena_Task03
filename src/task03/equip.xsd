@@ -73,11 +73,40 @@
                         <element name="sunVisor" type="boolean"></element>
                         <element name="headsetConnector" type="boolean"></element>
                         <element name="admissionGp" type="boolean"></element>
+                        <element name="test">
+                            <simpleType>
+                                <restriction base="string">
+                                    <enumeration value="test1">
+                                        <annotation>
+                                            <appinfo>
+                                                <attribute name="haveVisor" type="boolean" fixed="true"></attribute>
+                                                <attribute name="havePeak" type="boolean" fixed="false"></attribute> 
+                                            </appinfo>
+                                        </annotation>     
+                                    </enumeration>
+                                    <enumeration value="test2">
+                                        <annotation>
+                                            <appinfo>
+                                                <attribute name="haveVisor" type="boolean" fixed="false"></attribute>
+                                                <attribute name="havePeak" type="boolean" fixed="false"></attribute> 
+                                            </appinfo>
+                                        </annotation>     
+                                    </enumeration>
+                                </restriction>
+                            </simpleType>
+                        </element>
                     </sequence>
                     <attribute name="helmetType" use="optional">
                         <simpleType>
                             <restriction base="string">
-                                <enumeration value="INTEGRAL"/>
+                                <enumeration value="INTEGRAL">
+                                    <annotation>
+                                        <appinfo>
+                                            <attribute name="haveVisor" type="boolean" fixed="true"></attribute>
+                                            <attribute name="havePeak" type="boolean" fixed="false"></attribute> 
+                                        </appinfo>
+                                    </annotation>     
+                                </enumeration>
                                 <enumeration value="MODULAR"/>
                                 <enumeration value="JET"/>
                                 <enumeration value="CROSS"/>
