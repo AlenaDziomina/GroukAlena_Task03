@@ -6,15 +6,16 @@ and open the template in the editor.
 -->
 
 
-<motoequipment
+<moto-equip
     xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
     xmlns='http://epam.by/motoequip'
     xsi:schemaLocation='http://epam.by/motoequip equip.xsd'>
     
-    <helmet id="1" name="520 CARBON" size="XL" genderStyle="M" helmetType="INTEGRAL">
+    <helmet id="id1" name="520 CARBON" size="XL" genderStyle="M" helmetType="INTEGRAL">
         <manufacturer>ROCC</manufacturer>
         <price>300</price>
         <weight>1.210</weight>
+        <baseMaterial>ABS</baseMaterial>
         <motoType>COMMON</motoType>
         <shellMaterial>Carbon</shellMaterial>
         <insertMaterial>HydraDry</insertMaterial>
@@ -23,10 +24,11 @@ and open the template in the editor.
         <headsetConnector>false</headsetConnector>
         <admissionGp>false</admissionGp>
     </helmet>
-    <helmet id="2" name="524 FIBERGLASS" size="XL" genderStyle="Y" helmetType="INTEGRAL">
+    <helmet id="id2" name="524 FIBERGLASS" size="XL" genderStyle="Y" helmetType="INTEGRAL">
         <manufacturer>ROCC</manufacturer>
         <price>170</price>
         <weight>1.450</weight>
+        <baseMaterial>ABS</baseMaterial>
         <motoType>ENDURO</motoType>
         <shellMaterial>Fiberglass</shellMaterial>
         <insertMaterial>HydraDry</insertMaterial>
@@ -35,10 +37,11 @@ and open the template in the editor.
         <headsetConnector>false</headsetConnector>
         <admissionGp>false</admissionGp>
     </helmet>
-    <helmet id="3" name="482 COOL" size="XL">
+    <helmet id="id3" name="482 COOL" size="XL" helmetType="INTEGRAL">
         <manufacturer>ROCC</manufacturer>
         <price>160</price>
         <weight>1.450</weight>
+        <baseMaterial>ABS</baseMaterial>
         <motoType></motoType>
         <shellMaterial>ABS</shellMaterial>
         <insertMaterial>Silver Cool</insertMaterial>
@@ -47,14 +50,16 @@ and open the template in the editor.
         <headsetConnector>false</headsetConnector>
         <admissionGp>false</admissionGp>
     </helmet>
-    <visor id="4" name="sunVisor">
+    <visor id="id4" name="sunVisor">
         <manufacturer>ROCC</manufacturer>
         <price>10</price>
         <weight>0.050</weight>
-        <forWhat>
-            2 3
-        </forWhat>
-        <antiblic>true</antiblic>
+        <baseMaterial>ABS</baseMaterial>
+        <forWhat>id2</forWhat>
+        <forWhat>id3</forWhat>
+        <antiblick>true</antiblick>
+        <antifog>true</antifog>
+        <pinlock>true</pinlock>
     </visor>
 
-</motoequipment>
+</moto-equip>

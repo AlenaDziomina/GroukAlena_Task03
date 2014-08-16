@@ -6,17 +6,20 @@
 
 package task03;
 
+import org.apache.log4j.Logger;
+import org.apache.log4j.PropertyConfigurator;
 /**
  *
  * @author Helena.Grouk
  */
 public class Task03 {
 
-    /**
-     * @param args the command line arguments
-     */
+    static final String LOG_PROPERTIES_FILE = "Log4J.properties";
+    public static Logger localLog = Logger.getLogger("localLoger");
+    
     public static void main(String[] args) {
-        // TODO code application logic here
+        PropertyConfigurator.configure(LOG_PROPERTIES_FILE);
+        
     }
     
 }
