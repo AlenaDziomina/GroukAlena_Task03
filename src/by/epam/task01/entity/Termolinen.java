@@ -8,18 +8,34 @@ package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
 import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Termolinen", propOrder = {
+    "elastic",
+    "seamless"
+})
+@XmlRootElement
 public class Termolinen extends AdditionalEquip {
     
     enum ClothesType {socks, tshirt, jumper, shorts, pants }
     
-    private ClothesType clothesType;
+    
     private boolean elastic;
     private boolean seamless; //бесшовный
+    @XmlAttribute(name = "clothes-type", required = true)
+    private ClothesType clothesType;
+    
+    public Termolinen(){}
     
     public Termolinen(int id, String name) throws ProjectException {
         super(id, name);
@@ -66,7 +82,6 @@ public class Termolinen extends AdditionalEquip {
         hash = 97 * hash + (this.seamless ? 1 : 0);
         return hash;
     }
-
     
     @Override
     public String toString() {
@@ -108,7 +123,7 @@ public class Termolinen extends AdditionalEquip {
         return this.clothesType.toString();
     }
             
-    public void setElastic(boolean elastic) {
+    public void setElastic(Boolean elastic) {
         this.elastic = elastic;
     }
     
@@ -116,7 +131,7 @@ public class Termolinen extends AdditionalEquip {
         return this.elastic;
     }
     
-    public void setSeamless(boolean seamless) {
+    public void setSeamless(Boolean seamless) {
         this.seamless = seamless;
     }
     

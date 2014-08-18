@@ -11,19 +11,19 @@
     <target name="jaxb-code-generation" depends="xjc-typedef-target,-do-init,-init-macrodef-javac">
         <mkdir dir="${build.generated.sources.dir}/jaxb" xmlns:s="http://xml.netbeans.org/schema/JAXBWizConfig"/>
         <mkdir dir="build/generated/jaxbCache" xmlns:s="http://xml.netbeans.org/schema/JAXBWizConfig"/>
-        <mkdir dir="build/generated/jaxbCache/test"/>
-        <xjc package="test" destdir="build/generated/jaxbCache/test" catalog="catalog.xml">
+        <mkdir dir="build/generated/jaxbCache/marh"/>
+        <xjc package="marh" destdir="build/generated/jaxbCache/marh" catalog="catalog.xml">
             <classpath>
                 <pathelement location="${src.dir}"/>
                 <pathelement path="${jaxbwiz.xjcrun.classpath}"/>
             </classpath>
             <arg value="-xmlschema"/>
-            <schema file="xml-resources/jaxb/test/equip.xsd"/>
-            <depends file="xml-resources/jaxb/test/equip.xsd"/>
-            <produces dir="build/generated/jaxbCache/test"/>
+            <schema file="xml-resources/jaxb/marh/equip.xsd"/>
+            <depends file="xml-resources/jaxb/marh/equip.xsd"/>
+            <produces dir="build/generated/jaxbCache/marh"/>
         </xjc>
         <copy todir="${build.generated.sources.dir}/jaxb">
-            <fileset dir="build/generated/jaxbCache/test"/>
+            <fileset dir="build/generated/jaxbCache/marh"/>
         </copy>
     </target>
 </project>

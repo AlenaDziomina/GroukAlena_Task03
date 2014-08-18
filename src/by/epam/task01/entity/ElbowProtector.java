@@ -7,14 +7,26 @@
 package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ElbowProtector", propOrder = {
+    "articulated"
+})
+@XmlRootElement(name = "elbow-protector")
 public class ElbowProtector extends SeparateBodyProtection {
     
     private boolean articulated;
+    
+    public ElbowProtector(){}
     
     public ElbowProtector(int id, String name) throws ProjectException {
         super(id, name);
@@ -72,7 +84,7 @@ public class ElbowProtector extends SeparateBodyProtection {
         return str.toString();
     }
     
-    public void setArticulated(boolean articulated) {
+    public void setArticulated(Boolean articulated) {
         this.articulated = articulated;
     }
     

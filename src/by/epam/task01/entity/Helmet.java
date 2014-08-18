@@ -7,22 +7,51 @@
 package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
+import java.math.BigInteger;
 import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlSchemaType;
+import javax.xml.bind.annotation.XmlType;
 
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Helmet", propOrder = {
+    "shellMaterial",
+    "insertMaterial",
+    "vents",
+    "sunVisor",
+    "headsetConnector",
+    "admissionGp"
+})
+@XmlRootElement
 public class Helmet extends MainEquip { //шлем
     
-    private HelmetType helmetType; //тип шлема
+    @XmlElement(name = "shell-material", required = true)
     private String shellMaterial; //материал поверхности
+    @XmlElement(name = "insert-material", required = true)
     private String insertMaterial; //материал внутренней обшивки
+    @XmlElement(required = true)
+    @XmlSchemaType(name = "positiveInteger")
     private int vents; //кол-во вентиляционнных каналов
+    @XmlElement(name = "sun-visor")
     private boolean sunVisor; //наличие встроенного сонцезащитного визора 
+    @XmlElement(name = "headset-connector")
     private boolean headsetConnector; //наличие разъема под гарнитуру
+    @XmlElement(name = "admission-gp")
     private boolean admissionGp; //наличие сертификата доступа к motoGP
+    @XmlAttribute(name = "helmet-type", required = true)
+    private HelmetType helmetType; //тип шлема
+    
+    public Helmet(){}
     
     public Helmet(int id, String name) throws ProjectException {
         super(id, name);

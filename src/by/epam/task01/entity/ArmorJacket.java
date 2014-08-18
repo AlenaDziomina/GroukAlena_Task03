@@ -7,17 +7,37 @@
 package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ArmorJacket", propOrder = {
+    "backProtect",
+    "chestProtect",
+    "elbowsProtect",
+    "shouldersProtect"
+})
+@XmlRootElement(name = "armor-jacket")
 public class ArmorJacket extends SeparateBodyProtection {
     
+    @XmlElement(name = "back-protect")
     private boolean backProtect; //наличие вставки защиты спины
+    @XmlElement(name = "chest-protect")
     private boolean chestProtect;
+    @XmlElement(name = "elbows-protect")
     private boolean elbowsProtect; //наличие вставки защиты локтей
+    @XmlElement(name = "shoulders-protect")
     private boolean shouldersProtect; //наличие вставки защиты плечей
+    
+    public ArmorJacket(){}
     
     public ArmorJacket(int id, String name) throws ProjectException {
         super(id, name);
@@ -69,8 +89,6 @@ public class ArmorJacket extends SeparateBodyProtection {
         return hash;
     }
 
-    
-    
     @Override
     public String toString() {
         String str1 = super.toString();

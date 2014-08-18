@@ -8,7 +8,6 @@ package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
 import java.util.Objects;
-
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
@@ -37,6 +36,8 @@ public abstract class AdditionalEquip extends BaseMotoEquipment{
     
     @XmlElement(required = true)
     private Season season; //сезон применения
+    
+    protected AdditionalEquip(){}
     
     protected AdditionalEquip(int id, String name) throws ProjectException {
         super(id, name);
@@ -89,12 +90,6 @@ public abstract class AdditionalEquip extends BaseMotoEquipment{
         return str.toString();
     }
     
-    /**
-     * @param season
-     *     allowed object is
-     *     {@link String } 
-     * @throws by.epam.task01.ProjectExeptions.ProjectException 
-     */
     public void setSeason(String season) throws ProjectException {
         if (season == null || season.isEmpty()) {
             throw new ProjectException("AdditionalEquip.Season == null or empty.");
@@ -108,11 +103,6 @@ public abstract class AdditionalEquip extends BaseMotoEquipment{
         }  
     }
     
-    /**
-     * @return
-     *     possible object is
-     *     {@link String }     
-     */
     public String getSeason() {
         return this.season.toString();
     }

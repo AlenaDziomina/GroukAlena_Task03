@@ -32,18 +32,19 @@
         <element name="termolinen" type="tns:Termolinen" substitutionGroup="tns:moto-equipment"></element>
         <element name="slicker" type="tns:Slicker" substitutionGroup="tns:moto-equipment"></element>
         <element name="balaclava" type="tns:Balaclava" substitutionGroup="tns:moto-equipment"></element>
-        <element name="protection-insert" type="tns:ProtectionInsert" substitutionGroup="tns:moto-equipment"></element>
+        <element name="protector-insert" type="tns:ProtectorInsert" substitutionGroup="tns:moto-equipment"></element>
         <element name="sliders" type="tns:Sliders" substitutionGroup="tns:moto-equipment"></element>
         <element name="visor" type="tns:Visor" substitutionGroup="tns:moto-equipment"></element>
         
         <complexType name="MotoEquipment">
             <sequence>
+                <element name="id" type="integer"></element>
                 <element name="manufacturer" type="string"></element>
                 <element name="price" type="positiveInteger"></element>
                 <element name="weight" type="float"></element>                  
-                <element name="baseMaterial" type="string"></element>
+                <element name="base-material" type="string"></element>
             </sequence>
-            <attribute name="id" type="ID" use="required"/>
+            <attribute name="id_s" type="ID" use="required"/>
             <attribute name="name" type="string" use="required"/>
         </complexType>
         
@@ -51,7 +52,15 @@
             <complexContent>
                 <extension base="tns:MotoEquipment">
                     <sequence>
-                        <element name="forWhat" type="IDREF" maxOccurs="unbounded"></element>
+                        <element name="for-what">
+                            <complexType>
+                                <sequence>
+                                    <element ref="tns:base-moto-equipment"
+                                            minOccurs="0"
+                                            maxOccurs="unbounded"/>
+                                </sequence>
+                            </complexType>
+                        </element>
                     </sequence>
                 </extension>
             </complexContent>
@@ -60,14 +69,14 @@
         <complexType name="BaseMotoEquipment">
             <complexContent>
                 <extension base="tns:MotoEquipment">
-                    <attribute name="size" type="string" use="required"/>
-                    <attribute name="genderStyle" use="optional" default="Y">
+                    <attribute name="size" type="string" use="optional"/>
+                    <attribute name="gender-style" use="optional" default="Y">
                         <simpleType>
                             <restriction base="string">
                                 <enumeration value="Y"></enumeration>
                                 <enumeration value="M"></enumeration>
                                 <enumeration value="W"></enumeration>
-                                <enumeration value="Ch"></enumeration>
+                                <enumeration value="CH"></enumeration>
                             </restriction>
                         </simpleType>
                     </attribute>
@@ -79,7 +88,7 @@
             <complexContent>
                 <extension base="tns:BaseMotoEquipment">
                     <sequence>
-                        <element name="motoType" default="COMMON">
+                        <element name="moto-type" default="COMMON">
                             <simpleType>
                                 <restriction base="string">
                                     <enumeration value="TURIST"></enumeration>
@@ -119,7 +128,7 @@
             <complexContent>
                 <extension base="tns:MainEquip">
                     <sequence>
-                        <element name="protectionMaterial" type="string"></element>
+                        <element name="protection-material" type="string"></element>
                     </sequence>
                 </extension>
             </complexContent>
@@ -141,7 +150,7 @@
             <complexContent>
                 <extension base="tns:BodyProtection">
                     <sequence>
-                        <element name="mountType" type="string"></element>
+                        <element name="mount-type" type="string"></element>
                     </sequence>
                 </extension>
             </complexContent>
@@ -151,9 +160,9 @@
             <complexContent>
                 <extension base="tns:BuiltInBodyProtection">
                     <sequence>
-                        <element name="backInsert" type="boolean"></element>
-                        <element name="elbowsInsert" type="boolean"></element>
-                        <element name="shouldersInsert" type="boolean"></element>
+                        <element name="back-insert" type="boolean"></element>
+                        <element name="elbows-insert" type="boolean"></element>
+                        <element name="shoulders-insert" type="boolean"></element>
                     </sequence>
                 </extension>
             </complexContent>
@@ -163,9 +172,9 @@
             <complexContent>
                 <extension base="tns:BuiltInBodyProtection">
                     <sequence>
-                        <element name="hipInsert" type="boolean"></element>
-                        <element name="kneeInsert" type="boolean"></element>
-                        <element name="sliderMount" type="boolean"></element>
+                        <element name="hip-insert" type="boolean"></element>
+                        <element name="knee-insert" type="boolean"></element>
+                        <element name="slider-mount" type="boolean"></element>
                     </sequence>
                 </extension>
             </complexContent>
@@ -175,9 +184,9 @@
             <complexContent>
                 <extension base="tns:BuiltInBodyProtection">
                     <sequence>
-                        <element name="palmProtect" type="boolean"></element>
-                        <element name="fingersProtect" type="boolean"></element>
-                        <element name="knucklesProtect" type="boolean"></element>
+                        <element name="palm-protect" type="boolean"></element>
+                        <element name="fingers-protect" type="boolean"></element>
+                        <element name="knuckles-protect" type="boolean"></element>
                     </sequence>
                 </extension>
             </complexContent>
@@ -187,10 +196,10 @@
             <complexContent>    
                 <extension base="tns:SeparateBodyProtection">
                     <sequence>
-                        <element name="backProtect" type="boolean"></element>
-                        <element name="chestProtect" type="boolean"></element>
-                        <element name="elbowsProtect" type="boolean"></element>
-                        <element name="shouldersProtect" type="boolean"></element>
+                        <element name="back-protect" type="boolean"></element>
+                        <element name="chest-protect" type="boolean"></element>
+                        <element name="elbows-protect" type="boolean"></element>
+                        <element name="shoulders-protect" type="boolean"></element>
                     </sequence>
                 </extension>
             </complexContent>  
@@ -220,14 +229,14 @@
             <complexContent>
                 <extension base="tns:MainEquip">
                     <sequence>
-                        <element name="shellMaterial" type="string"></element>
-                        <element name="insertMaterial" type="string"></element>
-                        <element name="vents" type="positiveInteger"></element>
-                        <element name="sunVisor" type="boolean"></element>
-                        <element name="headsetConnector" type="boolean"></element>
-                        <element name="admissionGp" type="boolean"></element>
+                        <element name="shell-material" type="string"></element>
+                        <element name="insert-material" type="string"></element>
+                        <element name="vents" type="integer"></element>
+                        <element name="sun-visor" type="boolean"></element>
+                        <element name="headset-connector" type="boolean"></element>
+                        <element name="admission-gp" type="boolean"></element>
                     </sequence>
-                    <attribute name="helmetType" use="required">
+                    <attribute name="helmet-type" use="required">
                         <simpleType>
                             <restriction base="string">
                                 <enumeration value="INTEGRAL"/>
@@ -246,9 +255,9 @@
             <complexContent>
                 <extension base="tns:MainEquip">
                     <sequence>
-                        <element name="soleMaterial" type="string"></element>
-                        <element name="protectionMaterial" type="string"></element>
-                        <element name="mountType" type="string"></element>
+                        <element name="sole-material" type="string"></element>
+                        <element name="protection-material" type="string"></element>
+                        <element name="mount-type" type="string"></element>
                     </sequence>
                 </extension>
             </complexContent>
@@ -261,7 +270,7 @@
                         <element name="elastic" type="boolean"></element>
                         <element name="seamless" type="boolean"></element>
                     </sequence>
-                    <attribute name="clothesType" use="required">
+                    <attribute name="clothes-type" use="required">
                         <simpleType>
                             <restriction base="string">
                                 <enumeration value="socks"></enumeration>
@@ -298,10 +307,10 @@
             </complexContent>
         </complexType>
         
-        <complexType name="ProtectionInsert">
+        <complexType name="ProtectorInsert">
             <complexContent>
                 <extension base="tns:SpecialMotoEquipment">
-                    <attribute name="bodyPart" use="required">
+                    <attribute name="body-part" use="required">
                         <simpleType>
                             <restriction base="string">
                                 <enumeration value="back"></enumeration>
@@ -321,7 +330,7 @@
             <complexContent>
                 <extension base="tns:SpecialMotoEquipment">
                     <sequence>
-                        <element name="hasPicture" type="boolean"></element>
+                        <element name="has-picture" type="boolean"></element>
                     </sequence>
                 </extension>
             </complexContent>

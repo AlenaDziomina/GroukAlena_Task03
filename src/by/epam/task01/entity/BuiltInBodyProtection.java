@@ -7,11 +7,28 @@
 package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "BuiltInBodyProtection", propOrder = {
+    "waterproof",
+    "perforation",
+    "insulation"
+})
+@XmlSeeAlso({
+    Pants.class,
+    Jacket.class,
+    Gloves.class
+})
+
 public abstract class BuiltInBodyProtection extends BodyProtection{
     //встроенная защита тела
     
@@ -20,6 +37,7 @@ public abstract class BuiltInBodyProtection extends BodyProtection{
     private boolean perforation; //наличие перворации
     private boolean insulation; //наличие утеплителя
 
+    protected BuiltInBodyProtection(){}
     
     protected BuiltInBodyProtection(int id, String name)
             throws ProjectException {
@@ -68,7 +86,6 @@ public abstract class BuiltInBodyProtection extends BodyProtection{
         hash = 53 * hash + (this.insulation ? 1 : 0);
         return hash;
     }
-
     
     @Override
     public String toString() {

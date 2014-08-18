@@ -7,15 +7,26 @@
 package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
-import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Balaclava", propOrder = {
+    "seamless"
+})
+@XmlRootElement
 public class Balaclava extends AdditionalEquip {
     
     private boolean seamless; //бесшовный
+    
+    public Balaclava(){}
     
     public Balaclava(int id, String name) throws ProjectException {
         super(id, name);
@@ -73,7 +84,7 @@ public class Balaclava extends AdditionalEquip {
         return str.toString();
     }
     
-    public void setSeamless(boolean seamless) {
+    public void setSeamless(Boolean seamless) {
         this.seamless = seamless;
     }
     

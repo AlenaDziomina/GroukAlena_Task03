@@ -7,15 +7,28 @@
 package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Sliders", propOrder = {
+    "hasPicture"
+})
+@XmlRootElement
 public class Sliders extends SpecialMotoEquipment { //слайдеры
     
-    
+    @XmlElement(name = "has-picture")
     private boolean hasPicture;
+    
+    public Sliders(){}
     
     public Sliders(int id, String name) throws ProjectException {
         super(id, name);
@@ -73,7 +86,7 @@ public class Sliders extends SpecialMotoEquipment { //слайдеры
         return str.toString();
     }
     
-    public void setPicture(boolean hasPicture) {
+    public void setPicture(Boolean hasPicture) {
         this.hasPicture = hasPicture;
     }
     

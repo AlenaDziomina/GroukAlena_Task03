@@ -8,14 +8,32 @@ package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
 import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "BodyProtection", propOrder = {
+    "protectionMaterial"
+})
+@XmlSeeAlso({
+    BuiltInBodyProtection.class,
+    SeparateBodyProtection.class
+})
+
 public abstract class BodyProtection extends MainEquip{ //защита тела
     
+    @XmlElement(name = "protection-material", required = true)
     private String protectionMaterial;
+    
+    protected BodyProtection(){}
     
     protected BodyProtection(int id, String name) throws ProjectException {
         super(id, name);

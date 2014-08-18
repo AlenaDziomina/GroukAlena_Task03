@@ -33,10 +33,12 @@ public class EquipFactory {
         MotoEquipment newEq = buildEquip(className, id, name);      
             
         for (String[] arg : args){    
-            try {
-                setProperties(newEq, arg);
-            } catch (NullInitException | LogicException ex) {
-                localLog.error("Set equip property fail.");
+            if (arg[0] != null ) {
+                try {
+                    setProperties(newEq, arg);
+                } catch (NullInitException | LogicException ex) {
+                    localLog.error("Set equip property fail.");
+                }
             }
         }
             
@@ -51,7 +53,7 @@ public class EquipFactory {
                 return arg[1];
             }
         }
-        throw new NullInitException("EquipFactory: can't find class."); 
+        throw new NullInitException("EquipFactory: can't find class "+args[0][0] +"."); 
     }
     
     private static int findId(String[]... args) throws NullInitException {
@@ -82,7 +84,7 @@ public class EquipFactory {
         }
         
         try {    
-            Class < ? extends MotoEquipment> cl = (Class < ? extends MotoEquipment>) Class.forName(className);
+            Class < ? extends MotoEquipment> cl = (Class < ? extends MotoEquipment>) Class.forName("by.epam.task01.entity." + className);
             Constructor<?> constr = cl.getConstructor(int.class, String.class);
             MotoEquipment newEq = (MotoEquipment) constr.newInstance(objId, objName);
             return newEq;
@@ -92,6 +94,8 @@ public class EquipFactory {
     }
     
     private static void setProperties(MotoEquipment obj, String[] arg) throws NullInitException, LogicException {
+        
+        
         if(arg == null || arg.length < 3) {
             throw new NullInitException("SetProperties: arg == null.");
         }

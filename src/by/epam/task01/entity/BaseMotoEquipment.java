@@ -8,21 +8,39 @@ package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
 import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "BaseMotoEquipment")
+@XmlSeeAlso({
+    MainEquip.class,
+    AdditionalEquip.class
+})
+
 public abstract class BaseMotoEquipment extends MotoEquipment{ //основной экип
     
     enum GenderStyle {Y, M, W, CH}
     
+    @XmlAttribute(name = "size", required = true)
     private String size; //размер
+    @XmlAttribute(name = "gender-style")
     private GenderStyle gender = GenderStyle.Y; //пол-возраст для определения размерной таблицы
+
+    protected BaseMotoEquipment(){}
     
     protected BaseMotoEquipment(int id, String name) throws ProjectException {
         super(id, name);
     }
+    
     protected BaseMotoEquipment(int id, String name, int price, float weight)
             throws ProjectException {
         super(id, name, price, weight);

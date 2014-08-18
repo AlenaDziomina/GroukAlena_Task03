@@ -14,24 +14,47 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAnyElement;
+import javax.xml.bind.annotation.XmlElementRef;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "SpecialMotoEquipment", propOrder = {
+    "forWhat"
+})
+@XmlSeeAlso({
+    ProtectorInsert.class,
+    Visor.class,
+    Sliders.class
+})
+
 public abstract class SpecialMotoEquipment extends MotoEquipment{
     //специализированный экип
     
     //для какой основной экипировки предназначено
-    private Set<BaseMotoEquipment> forWhat = new TreeSet();
+    @XmlAnyElement
+    //private Set<BaseMotoEquipment> forWhat;
+    private RefBaseEquip forWhat = new RefBaseEquip();
+    
+    protected SpecialMotoEquipment(){}
     
     protected SpecialMotoEquipment(int id, String name) throws ProjectException {
         super(id, name);
+        //this.forWhat = new TreeSet();
     }
     
     protected SpecialMotoEquipment(int id, String name, int price, float weight)
             throws ProjectException {
         super(id, name, price, weight);
+        //this.forWhat = new TreeSet();
     }
     
     @Override
@@ -78,10 +101,10 @@ public abstract class SpecialMotoEquipment extends MotoEquipment{
        
     }
     
-    public List<BaseMotoEquipment> getForWhat(){
-        List list = new ArrayList(forWhat);
-        return Collections.unmodifiableList(list);
-    }
+//    public List<BaseMotoEquipment> getForWhat(){
+//        List list = new ArrayList(forWhat);
+//        return Collections.unmodifiableList(list);
+//    }
     
     public void setForWhat(BaseMotoEquipment eq) throws ProjectException{
         if (null == eq) {
@@ -90,12 +113,13 @@ public abstract class SpecialMotoEquipment extends MotoEquipment{
         forWhat.add(eq);
     }
     
-    public void setForWhat(Collection<BaseMotoEquipment> eq) throws ProjectException {
-        if (null == eq) {
-            throw new ProjectException("BaseMotoEquipment forWhat == null.");
-        }
-        forWhat.addAll(eq);
-    }
+//    public void setForWhat(Collection<BaseMotoEquipment> eq) throws ProjectException {
+//        if (null == eq) {
+//            throw new ProjectException("BaseMotoEquipment forWhat == null.");
+//        }
+//        forWhat.addAll(eq);
+//    }
+    
     
    
     

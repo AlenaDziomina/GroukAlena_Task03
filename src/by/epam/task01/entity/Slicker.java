@@ -7,16 +7,30 @@
 package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Slicker", propOrder = {
+    "separate",
+    "fluorescent",
+    "hood"
+})
+@XmlRootElement
 public class Slicker extends AdditionalEquip { //дождевик
     
     private boolean separate;
     private boolean fluorescent;
     private boolean hood;
+    
+    public Slicker(){}
     
     public Slicker(int id, String name) throws ProjectException {
         super(id, name);
@@ -85,7 +99,7 @@ public class Slicker extends AdditionalEquip { //дождевик
         return str.toString();
     }
     
-    public void setSeparate(boolean separate) {
+    public void setSeparate(Boolean separate) {
         this.separate = separate;
     }
     
@@ -93,7 +107,7 @@ public class Slicker extends AdditionalEquip { //дождевик
         return this.separate;
     }
     
-    public void setFluorescent(boolean fluorescent) {
+    public void setFluorescent(Boolean fluorescent) {
         this.fluorescent = fluorescent;
     }
     
@@ -101,7 +115,7 @@ public class Slicker extends AdditionalEquip { //дождевик
         return this.fluorescent;
     }
     
-    public void setHood(boolean hood) {
+    public void setHood(Boolean hood) {
         this.hood = hood;
     }
     

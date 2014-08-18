@@ -7,17 +7,35 @@
 package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Pants", propOrder = {
+    "hipInsert",
+    "kneeInsert",
+    "sliderMount"
+})
+@XmlRootElement
 public class Pants extends BuiltInBodyProtection { //мотоштаны
     
-    boolean hipInsert; //наличие вставки защиты бедер
-    boolean kneeInsert; //наличие вствки защиты коленей
-    boolean sliderMount; //наличие возможности крепления слайдеров
-
+    @XmlElement(name = "hip-insert")
+    private boolean hipInsert; //наличие вставки защиты бедер
+    @XmlElement(name = "knee-insert")
+    private boolean kneeInsert; //наличие вствки защиты коленей
+    @XmlElement(name = "slider-mount")
+    private boolean sliderMount; //наличие возможности крепления слайдеров
+    
+    public Pants(){}
+    
     public Pants(int id, String name) throws ProjectException{
         super(id, name);
     }

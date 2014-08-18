@@ -8,16 +8,34 @@ package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
 import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Shoes", propOrder = {
+    "soleMaterial",
+    "protectionMaterial",
+    "mountType"
+})
+@XmlRootElement
 public class Shoes extends MainEquip { //мотообувь
     
+    @XmlElement(name = "sole-material", required = true)
     private String soleMaterial; //материал основания
+    @XmlElement(name = "protection-material", required = true)
     private String protectionMaterial; //материал защиты
+    @XmlElement(name = "mount-type", required = true)
     private String mountType; //тип крепления (застежки)
+    
+    public Shoes(){}
     
     public Shoes(int id, String name) throws ProjectException {
         super(id, name);

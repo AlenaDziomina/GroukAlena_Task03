@@ -8,16 +8,35 @@ package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
 import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "MainEquip", propOrder = {
+    "motoType"
+})
+@XmlSeeAlso({
+    Shoes.class,
+    Helmet.class,
+    BodyProtection.class
+})
+
 public abstract class MainEquip extends BaseMotoEquipment{ //основная экипировка
     
     enum MotoType {TURIST, SPORT, ENDURO, CROSS, STUNT, COMMON}
     
+    @XmlElement(name = "moto-type", required = true, defaultValue = "COMMON")
     private MotoType motoType = MotoType.COMMON; //тип применения экипировки
+    
+    protected MainEquip(){}
     
     protected MainEquip(int id, String name) throws ProjectException {
         super(id, name);

@@ -7,16 +7,34 @@
 package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Gloves", propOrder = {
+    "palmProtect",
+    "fingersProtect",
+    "knucklesProtect"
+})
+@XmlRootElement
 public class Gloves extends BuiltInBodyProtection { //перчатки
 
+    @XmlElement(name = "palm-protect")
     private boolean palmProtect; //защита ладони
+    @XmlElement(name = "fingers-protect")
     private boolean fingersProtect; //защита пальцев
+    @XmlElement(name = "knuckles-protect")
     private boolean knucklesProtect; //защита костяшек пальцев
+    
+    public Gloves(){}
     
     public Gloves(int id, String name) throws ProjectException {
         super(id, name);
@@ -83,7 +101,7 @@ public class Gloves extends BuiltInBodyProtection { //перчатки
         return str.toString();
     }
     
-    public void setPalmProtect(boolean palmProtect) {
+    public void setPalmProtect(Boolean palmProtect) {
         this.palmProtect = palmProtect;
     }
     
@@ -91,7 +109,7 @@ public class Gloves extends BuiltInBodyProtection { //перчатки
         return this.palmProtect;
     }
     
-    public void setFingersProtect(boolean fingersProtect) {
+    public void setFingersProtect(Boolean fingersProtect) {
         this.fingersProtect = fingersProtect;
     }
     
@@ -99,7 +117,7 @@ public class Gloves extends BuiltInBodyProtection { //перчатки
         return this.fingersProtect;
     }
     
-    public void setKnucklesProtect(boolean knucklesProtect) {
+    public void setKnucklesProtect(Boolean knucklesProtect) {
         this.knucklesProtect = knucklesProtect;
     }
     

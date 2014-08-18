@@ -7,14 +7,26 @@
 package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "KneeProtector", propOrder = {
+    "articulated"
+})
+@XmlRootElement(name = "knee-protector")
 public class KneeProtector extends SeparateBodyProtection { //наколенники
     
     private boolean articulated; //шарнирные
+    
+    public KneeProtector(){}
     
     public KneeProtector(int id, String name) throws ProjectException {
         super(id, name);
@@ -55,8 +67,6 @@ public class KneeProtector extends SeparateBodyProtection { //наколенни
         return hash;
     }
 
-    
-
     @Override
     public String toString() {
         String str1 = super.toString();
@@ -74,7 +84,7 @@ public class KneeProtector extends SeparateBodyProtection { //наколенни
         return str.toString();
     }
     
-    public void setArticulated(boolean articulated) {
+    public void setArticulated(Boolean articulated) {
         this.articulated = articulated;
     }
     

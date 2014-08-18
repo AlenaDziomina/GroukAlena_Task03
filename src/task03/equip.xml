@@ -11,52 +11,56 @@ and open the template in the editor.
     xmlns='http://epam.by/motoequip'
     xsi:schemaLocation='http://epam.by/motoequip equip.xsd'>
     
-    <helmet id="id1" name="520 CARBON" size="XL" genderStyle="M" helmetType="INTEGRAL">
+    <helmet id_s="id1" name="520 CARBON" size="XL" gender-style="M" helmet-type="INTEGRAL">
+        <id>1</id>
         <manufacturer>ROCC</manufacturer>
         <price>300</price>
         <weight>1.210</weight>
-        <baseMaterial>ABS</baseMaterial>
-        <motoType>COMMON</motoType>
-        <shellMaterial>Carbon</shellMaterial>
-        <insertMaterial>HydraDry</insertMaterial>
+        <base-material>ABS</base-material>
+        <moto-type>COMMON</moto-type>
+        <shell-material>Carbon</shell-material>
+        <insert-material>HydraDry</insert-material>
         <vents>7</vents>
-        <sunVisor>true</sunVisor>
-        <headsetConnector>false</headsetConnector>
-        <admissionGp>false</admissionGp>
+        <sun-visor>true</sun-visor>
+        <headset-connector>false</headset-connector>
+        <admission-gp>false</admission-gp>
     </helmet>
-    <helmet id="id2" name="524 FIBERGLASS" size="XL" genderStyle="Y" helmetType="INTEGRAL">
+    <helmet id_s="id2" name="524 FIBERGLASS" size="XL" gender-style="Y" helmet-type="INTEGRAL">
+        <id>2</id>
         <manufacturer>ROCC</manufacturer>
         <price>170</price>
         <weight>1.450</weight>
-        <baseMaterial>ABS</baseMaterial>
-        <motoType>ENDURO</motoType>
-        <shellMaterial>Fiberglass</shellMaterial>
-        <insertMaterial>HydraDry</insertMaterial>
+        <base-material>ABS</base-material>
+        <moto-type>ENDURO</moto-type>
+        <shell-material>Fiberglass</shell-material>
+        <insert-material>HydraDry</insert-material>
         <vents>5</vents>
-        <sunVisor>true</sunVisor>
-        <headsetConnector>false</headsetConnector>
-        <admissionGp>false</admissionGp>
+        <sun-visor>true</sun-visor>
+        <headset-connector>false</headset-connector>
+        <admission-gp>false</admission-gp>
     </helmet>
-    <helmet id="id3" name="482 COOL" size="XL" helmetType="INTEGRAL">
+    <helmet id_s="id3" name="482 COOL" size="XL" helmet-type="INTEGRAL">
+        <id>3</id>
         <manufacturer>ROCC</manufacturer>
         <price>160</price>
         <weight>1.450</weight>
-        <baseMaterial>ABS</baseMaterial>
-        <motoType></motoType>
-        <shellMaterial>ABS</shellMaterial>
-        <insertMaterial>Silver Cool</insertMaterial>
+        <base-material>ABS</base-material>
+        <moto-type></moto-type>
+        <shell-material>ABS</shell-material>
+        <insert-material>Silver Cool</insert-material>
         <vents>7</vents>
-        <sunVisor>true</sunVisor>
-        <headsetConnector>false</headsetConnector>
-        <admissionGp>false</admissionGp>
+        <sun-visor>true</sun-visor>
+        <headset-connector>false</headset-connector>
+        <admission-gp>false</admission-gp>
     </helmet>
-    <visor id="id4" name="sunVisor">
+    <visor id_s="id4" name="sunVisor">
+        <id>4</id>
         <manufacturer>ROCC</manufacturer>
         <price>10</price>
         <weight>0.050</weight>
-        <baseMaterial>ABS</baseMaterial>
-        <forWhat>id2</forWhat>
-        <forWhat>id3</forWhat>
+        <base-material>ABS</base-material>
+        <for-what>id2</for-what>
+        <for-what>id3</for-what>
         <antiblick>true</antiblick>
         <antifog>true</antifog>
         <pinlock>true</pinlock>

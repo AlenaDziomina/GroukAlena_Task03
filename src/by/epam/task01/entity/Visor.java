@@ -7,16 +7,30 @@
 package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Visor", propOrder = {
+    "antiblick",
+    "antifog",
+    "pinlock"
+})
+@XmlRootElement
 public class Visor extends SpecialMotoEquipment { //визор
     
     private boolean antifog;
     private boolean antiblick;
     private boolean pinlock;
+    
+    public Visor(){}
     
     public Visor(int id, String name) throws ProjectException {
         super(id, name);
@@ -66,8 +80,6 @@ public class Visor extends SpecialMotoEquipment { //визор
         return hash;
     }
 
-   
-    
     @Override
     public String toString() {
         String str1 = super.toString();
@@ -88,10 +100,8 @@ public class Visor extends SpecialMotoEquipment { //визор
         
         return str.toString();
     }
-    
-    
-    
-    public void setAntifog(boolean antifog) {
+      
+    public void setAntifog(Boolean antifog) {
         this.antifog = antifog;
     }
     
@@ -99,7 +109,7 @@ public class Visor extends SpecialMotoEquipment { //визор
         return this.antifog;
     }
     
-    public void setAntiblick(boolean antiblick) {
+    public void setAntiblick(Boolean antiblick) {
         this.antiblick = antiblick;
     }
     
@@ -107,7 +117,7 @@ public class Visor extends SpecialMotoEquipment { //визор
         return this.antiblick;
     }
     
-    public void setPinlock(boolean pinlock) {
+    public void setPinlock(Boolean pinlock) {
         this.pinlock = pinlock;
     }
     

@@ -7,17 +7,28 @@
 package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "ProtectionInsert")
+@XmlRootElement(name = "protector-insert")
 public class ProtectorInsert extends SpecialMotoEquipment { //защитные вставки в мотокуртку и мотоштаны
     
     enum BodyPart {back, elbows, shoulders, chest, hip, knee}
     
+    @XmlAttribute(name = "body-part", required = true)
     private BodyPart bodyPart;
     
+    public ProtectorInsert(){}
     
     public ProtectorInsert(int id, String name) throws ProjectException {
         super(id, name);

@@ -8,21 +8,40 @@ package by.epam.task01.entity;
 
 import by.epam.task01.ProjectExeptions.ProjectException;
 import java.util.Objects;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlSeeAlso;
+import javax.xml.bind.annotation.XmlType;
 
 /**
  *
  * @author Helena.Grouk
  */
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "SeparateBodyProtection", propOrder = {
+    "mountType"
+})
+@XmlSeeAlso({
+    ArmorJacket.class,
+    ElbowProtector.class,
+    KneeProtector.class
+})
+
 public abstract class SeparateBodyProtection extends BodyProtection { 
     //отдельная защита тела (в виде щитков)
     
+    @XmlElement(name = "mount-type", required = true)
     private String mountType; //тип крепления к телу
     
-    protected SeparateBodyProtection (int id, String name) throws ProjectException {
+    protected SeparateBodyProtection(){}
+    
+    protected SeparateBodyProtection(int id, String name) throws ProjectException {
         super(id, name);
     }
     
-    protected SeparateBodyProtection (int id, String name, int price, float weight) throws ProjectException {
+    protected SeparateBodyProtection(int id, String name, int price, float weight) throws ProjectException {
         super(id, name, price, weight);
     }
     
