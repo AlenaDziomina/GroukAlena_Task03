@@ -41,20 +41,17 @@ public abstract class SpecialMotoEquipment extends MotoEquipment{
     
     //для какой основной экипировки предназначено
     @XmlAnyElement
-    //private Set<BaseMotoEquipment> forWhat;
     private RefBaseEquip forWhat = new RefBaseEquip();
     
     protected SpecialMotoEquipment(){}
     
     protected SpecialMotoEquipment(int id, String name) throws ProjectException {
         super(id, name);
-        //this.forWhat = new TreeSet();
     }
     
     protected SpecialMotoEquipment(int id, String name, int price, float weight)
             throws ProjectException {
         super(id, name, price, weight);
-        //this.forWhat = new TreeSet();
     }
     
     @Override
@@ -101,10 +98,9 @@ public abstract class SpecialMotoEquipment extends MotoEquipment{
        
     }
     
-//    public List<BaseMotoEquipment> getForWhat(){
-//        List list = new ArrayList(forWhat);
-//        return Collections.unmodifiableList(list);
-//    }
+    public List getForWhat() {
+        return this.forWhat.getListForWhat();
+    }
     
     public void setForWhat(BaseMotoEquipment eq) throws ProjectException{
         if (null == eq) {
@@ -112,15 +108,5 @@ public abstract class SpecialMotoEquipment extends MotoEquipment{
         }
         forWhat.add(eq);
     }
-    
-//    public void setForWhat(Collection<BaseMotoEquipment> eq) throws ProjectException {
-//        if (null == eq) {
-//            throw new ProjectException("BaseMotoEquipment forWhat == null.");
-//        }
-//        forWhat.addAll(eq);
-//    }
-    
-    
-   
     
 }

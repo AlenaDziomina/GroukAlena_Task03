@@ -6,6 +6,9 @@
 
 package by.epam.task03.entity;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 import javax.xml.bind.annotation.XmlAccessType;
@@ -21,18 +24,22 @@ import javax.xml.bind.annotation.XmlType;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "testSet"
+    "listForWhat"
 })
 @XmlRootElement(name = "for-what")
 public class RefBaseEquip {
     @XmlAnyElement
-    private Set<BaseMotoEquipment> testSet;
+    private Set<BaseMotoEquipment> listForWhat;
 
     public RefBaseEquip() {
-        this.testSet = new TreeSet<>();
+        this.listForWhat = new TreeSet<>();
     }
     
     public void add(BaseMotoEquipment eq) {
-        this.testSet.add(eq);
+        this.listForWhat.add(eq);
+    }
+    
+    public List getListForWhat() {
+        return Collections.unmodifiableList(new ArrayList(listForWhat));
     }
 }

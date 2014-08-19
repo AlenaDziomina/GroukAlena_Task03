@@ -6,6 +6,9 @@
 
 package by.epam.task03.entity;
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 import java.util.TreeSet;
@@ -70,11 +73,11 @@ public class MotoEquip {
         
     }
     
-    public Set<MotoEquipment> getEquip() {
+    public List getEquip() {
         if (equip == null) {
             equip = new TreeSet<>();
         }
-        return this.equip;
+        return Collections.unmodifiableList(new ArrayList(equip));
     }
     
     public void setEquip(Set<MotoEquipment> equip) {
