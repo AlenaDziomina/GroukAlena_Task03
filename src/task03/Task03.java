@@ -40,10 +40,10 @@ public class Task03 {
         PropertyConfigurator.configure(LOG_PROPERTIES_FILE);
 //        demarsh();
 //        
-//        marsh();
+        marsh();
 //        unmarsh();
         
-        //parsingSax();
+        parsingSax();
         parsingStax();
     }
     
@@ -102,8 +102,8 @@ public class Task03 {
             MotoEquip magaz = creatingMotoMagazin();
             System.out.println(magaz);
             m.marshal(magaz, new FileOutputStream("src/task03/equip_marsh.xml"));
-            m.marshal(magaz, System.out); //копия на консоль
-            System.out.println("XML-файл создан");
+            //m.marshal(magaz, System.out); //копия на консоль
+            //System.out.println("XML-файл создан");
         }
         catch (FileNotFoundException e) {
             System.out.println("XML-файл не может быть создан: " + e);

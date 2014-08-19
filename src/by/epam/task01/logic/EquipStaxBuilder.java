@@ -59,7 +59,7 @@ public class EquipStaxBuilder {
                     Matcher mat = pat.matcher(name);
                     String str = mat.replaceAll("_").toUpperCase();
                     if (EnumUtils.isValidEnum(EquipEnum.class, str)) {
-                        System.out.println(EquipEnum.valueOf(str).getCl());
+                        
                         String[] atr = {"class", EquipEnum.valueOf(str).getCl(), "String"};
                         atrs.add(atr);
                         

@@ -22,12 +22,8 @@ import static task03.Task03.localLog;
  * @author Helena.Grouk
  */
 class EquipHandler extends DefaultHandler {
-    
-    
-    
-    
-    
-    private MotoEquip equip;
+   
+    private final MotoEquip equip;
     private MotoEquipment current;
     private String[] currentProp;
     private ArrayList<String[]> atrs;
@@ -49,7 +45,7 @@ class EquipHandler extends DefaultHandler {
         String str = mat.replaceAll("_").toUpperCase();
         currentProp = null;
         if (EnumUtils.isValidEnum(EquipEnum.class, str)) {
-            System.out.println(EquipEnum.valueOf(str).getCl());
+            
             String[] atr = {"class", EquipEnum.valueOf(str).getCl(), "String"};
             atrs.add(atr);
         }

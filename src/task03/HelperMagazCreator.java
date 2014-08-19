@@ -44,7 +44,7 @@ public abstract class HelperMagazCreator {
                             {"admissionGp", "false", "boolean"},
                             {"motoType", "COMMON", "String"},
                             {"size", "XL", "String"},
-                            {"gender", "Y", "String"}
+                            {"genderStyle", "Y", "String"}
         };
         addEquip(magaz, str1);
         
@@ -64,7 +64,7 @@ public abstract class HelperMagazCreator {
                             {"admissionGp", "false", "boolean"},
                             {"motoType", "COMMON", "String"},
                             {"size", "XL", "String"},
-                            {"gender", "Y", "String"}
+                            {"genderStyle", "Y", "String"}
         };
         addEquip(magaz, str2);
        
@@ -84,7 +84,7 @@ public abstract class HelperMagazCreator {
                             {"admissionGp", "false", "boolean"},
                             {"motoType", "COMMON", "String"},
                             {"size", "XL", "String"},
-                            {"gender", "Y", "String"}
+                            {"genderStyle", "Y", "String"}
         };
         addEquip(magaz, str3);
        
@@ -104,7 +104,7 @@ public abstract class HelperMagazCreator {
                             {"admissionGp", "false", "boolean"},
                             {"motoType", "SPORT", "String"},
                             {"size", "XL", "String"},
-                            {"gender", "Y", "String"}
+                            {"genderStyle", "Y", "String"}
         };
         addEquip(magaz, str4);
         
@@ -124,7 +124,7 @@ public abstract class HelperMagazCreator {
                             {"admissionGp", "false", "boolean"},
                             {"motoType", "TURIST", "String"},
                             {"size", "L", "String"},
-                            {"gender", "W", "String"}
+                            {"genderStyle", "W", "String"}
         };        
         addEquip(magaz, str5);
         
@@ -144,7 +144,7 @@ public abstract class HelperMagazCreator {
                             {"admissionGp", "false", "boolean"},
                             {"motoType", "TURIST", "String"},
                             {"size", "L", "String"},
-                            {"gender", "Y", "String"}
+                            {"genderStyle", "Y", "String"}
         };       
         addEquip(magaz, str6);
        
@@ -164,7 +164,7 @@ public abstract class HelperMagazCreator {
                             {"admissionGp", "false", "boolean"},
                             {"motoType", "ENDURO", "String"},
                             {"size", "L", "String"},
-                            {"gender", "Y", "String"}
+                            {"genderStyle", "Y", "String"}
         };
         addEquip(magaz, str7);
         
@@ -183,7 +183,7 @@ public abstract class HelperMagazCreator {
                             {"admissionGp", "false", "boolean"},
                             {"motoType", "COMMON", "String"},
                             {"size", "XS", "String"},
-                            {"gender", "W", "String"}
+                            {"genderStyle", "W", "String"}
         };
         addEquip(magaz, str8);
         
@@ -203,7 +203,7 @@ public abstract class HelperMagazCreator {
                             {"admissionGp", "true", "boolean"},
                             {"motoType", "CROSS", "String"},
                             {"size", "L", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str9);
         
@@ -223,7 +223,7 @@ public abstract class HelperMagazCreator {
                             {"admissionGp", "false", "boolean"},
                             {"motoType", "CROSS", "String"},
                             {"size", "3XS", "String"},
-                            {"gender", "CH", "String"}
+                            {"genderStyle", "CH", "String"}
         };
         addEquip(magaz, str10);
         
@@ -243,7 +243,7 @@ public abstract class HelperMagazCreator {
                             {"admissionGp", "false", "boolean"},
                             {"motoType", "TURIST", "String"},
                             {"size", "3XS", "String"},
-                            {"gender", "CH", "String"}
+                            {"genderStyle", "CH", "String"}
         };
         addEquip(magaz, str11);
        
@@ -262,7 +262,7 @@ public abstract class HelperMagazCreator {
                             {"admissionGp", "false", "boolean"},
                             {"motoType", "TURIST", "String"},
                             {"size", "3XS", "String"},
-                            {"gender", "CH", "String"}
+                            {"genderStyle", "CH", "String"}
         };
         addEquip(magaz, str12);
         
@@ -282,7 +282,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "SPORT", "String"},
                             {"size", "XL", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str13);
         
@@ -302,7 +302,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "SPORT", "String"},
                             {"size", "XL", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str14);
         
@@ -322,7 +322,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "SPORT", "String"},
                             {"size", "XL", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str15);
         
@@ -342,7 +342,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "SPORT", "String"},
                             {"size", "M", "String"},
-                            {"gender", "W", "String"}
+                            {"genderStyle", "W", "String"}
         };
         addEquip(magaz, str16);
        
@@ -362,7 +362,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "TURIST", "String"},
                             {"size", "XXL", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str17);
         
@@ -382,7 +382,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "TURIST", "String"},
                             {"size", "XXL", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str18);
         
@@ -402,7 +402,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "TURIST", "String"},
                             {"size", "L", "String"},
-                            {"gender", "W", "String"}
+                            {"genderStyle", "W", "String"}
         };
         addEquip(magaz, str19);
         
@@ -422,7 +422,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "ENDURO", "String"},
                             {"size", "L", "String"},
-                            {"gender", "W", "String"}
+                            {"genderStyle", "W", "String"}
         };
         addEquip(magaz, str20);
                 
@@ -442,7 +442,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "ENDURO", "String"},
                             {"size", "XXL", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str21);
         
@@ -462,7 +462,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "ENDURO", "String"},
                             {"size", "3XS", "String"},
-                            {"gender", "CH", "String"}
+                            {"genderStyle", "CH", "String"}
         };
         addEquip(magaz, str22);
         
@@ -482,7 +482,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "SPORT", "String"},
                             {"size", "XXL", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str23);
         
@@ -502,7 +502,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "SPORT", "String"},
                             {"size", "XXL", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str24);
         
@@ -522,7 +522,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "SPORT", "String"},
                             {"size", "XL", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str25);
         
@@ -542,7 +542,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "SPORT", "String"},
                             {"size", "M", "String"},
-                            {"gender", "W", "String"}
+                            {"genderStyle", "W", "String"}
         };
         addEquip(magaz, str26);
         
@@ -562,7 +562,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "TURIST", "String"},
                             {"size", "XXL", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str27);
        
@@ -582,7 +582,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "TURIST", "String"},
                             {"size", "XXL", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str28);
         
@@ -602,7 +602,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "TURIST", "String"},
                             {"size", "L", "String"},
-                            {"gender", "W", "String"}
+                            {"genderStyle", "W", "String"}
         };
         addEquip(magaz, str29);
         
@@ -622,7 +622,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "ENDURO", "String"},
                             {"size", "L", "String"},
-                            {"gender", "W", "String"}
+                            {"genderStyle", "W", "String"}
         };
         addEquip(magaz, str30);
         
@@ -642,7 +642,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "ENDURO", "String"},
                             {"size", "XXL", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str31);
        
@@ -662,7 +662,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "ENDURO", "String"},
                             {"size", "3XS", "String"},
-                            {"gender", "CH", "String"}
+                            {"genderStyle", "CH", "String"}
         };
         addEquip(magaz, str32);
         
@@ -678,7 +678,7 @@ public abstract class HelperMagazCreator {
                             {"soleMaterial", "ABS", "String"},
                             {"motoType", "SPORT", "String"},
                             {"size", "42", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str33);
        
@@ -694,7 +694,7 @@ public abstract class HelperMagazCreator {
                             {"soleMaterial", "ABS", "String"},
                             {"motoType", "SPORT", "String"},
                             {"size", "41", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str34);
         
@@ -710,7 +710,7 @@ public abstract class HelperMagazCreator {
                             {"soleMaterial", "ABS", "String"},
                             {"motoType", "TURIST", "String"},
                             {"size", "43", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str35);
         
@@ -726,7 +726,7 @@ public abstract class HelperMagazCreator {
                             {"soleMaterial", "ABS", "String"},
                             {"motoType", "ENDURO", "String"},
                             {"size", "44", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str36);
         
@@ -742,7 +742,7 @@ public abstract class HelperMagazCreator {
                             {"soleMaterial", "ABS", "String"},
                             {"motoType", "STUNT", "String"},
                             {"size", "44", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str37);
         
@@ -758,7 +758,7 @@ public abstract class HelperMagazCreator {
                             {"soleMaterial", "ABS", "String"},
                             {"motoType", "CROSS", "String"},
                             {"size", "38", "String"},
-                            {"gender", "W", "String"}
+                            {"genderStyle", "W", "String"}
         };
         addEquip(magaz, str38);
         
@@ -774,7 +774,7 @@ public abstract class HelperMagazCreator {
                             {"soleMaterial", "ABS", "String"},
                             {"motoType", "ENDURO", "String"},
                             {"size", "35", "String"},
-                            {"gender", "CH", "String"}
+                            {"genderStyle", "CH", "String"}
         };
         addEquip(magaz, str39);
         
@@ -790,7 +790,7 @@ public abstract class HelperMagazCreator {
                             {"soleMaterial", "ABS", "String"},
                             {"motoType", "SPORT", "String"},
                             {"size", "39", "String"},
-                            {"gender", "W", "String"}
+                            {"genderStyle", "W", "String"}
         };
         addEquip(magaz, str40);
         
@@ -810,7 +810,7 @@ public abstract class HelperMagazCreator {
                             {"fingersProtect", "true", "boolean"},
                             {"knucklesProtect", "true", "boolean"},
                             {"size", "10", "String"},
-                            {"gender", "Y", "String"}
+                            {"genderStyle", "Y", "String"}
         };
         addEquip(magaz, str41);
         
@@ -830,7 +830,7 @@ public abstract class HelperMagazCreator {
                             {"fingersProtect", "true", "boolean"},
                             {"knucklesProtect", "true", "boolean"},
                             {"size", "4", "String"},
-                            {"gender", "CH", "String"}
+                            {"genderStyle", "CH", "String"}
         };
         addEquip(magaz, str42);
         
@@ -849,7 +849,7 @@ public abstract class HelperMagazCreator {
                             {"protectionMaterial", "SAS-TECH Protectoren", "String"},
                             {"motoType", "TURIST", "String"},
                             {"size", "2XL", "String"},
-                            {"gender", "M", "String"}
+                            {"genderStyle", "M", "String"}
         };
         addEquip(magaz, str43);
         
@@ -903,7 +903,7 @@ public abstract class HelperMagazCreator {
                             {"manufacturer", "KeepsFresh", "String"},
                             {"baseMaterial", "88% Poliamid, 12% Polyester", "String"},
                             {"size", "M", "String"},
-                            {"gender", "M", "String"},
+                            {"genderStyle", "M", "String"},
                             {"season", "SPRING", "String"},
                             {"clothesType", "tshirt", "String"},
                             {"elastic", "true", "boolean"},
@@ -919,7 +919,7 @@ public abstract class HelperMagazCreator {
                             {"manufacturer", "KeepsFresh", "String"},
                             {"baseMaterial", "88% Poliamid, 12% Polyester", "String"},
                             {"size", "M", "String"},
-                            {"gender", "M", "String"},
+                            {"genderStyle", "M", "String"},
                             {"season", "SPRING", "String"},
                             {"clothesType", "pants", "String"},
                             {"elastic", "true", "boolean"},
