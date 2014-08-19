@@ -33,7 +33,7 @@ public abstract class BaseMotoEquipment extends MotoEquipment{ //основно�
     @XmlAttribute(name = "size", required = true)
     private String size; //размер
     @XmlAttribute(name = "gender-style")
-    private GenderStyle gender = GenderStyle.Y; //пол-возраст для определения размерной таблицы
+    private GenderStyle genderStyle = GenderStyle.Y; //пол-возраст для определения размерной таблицы
 
     protected BaseMotoEquipment(){}
     
@@ -65,7 +65,7 @@ public abstract class BaseMotoEquipment extends MotoEquipment{ //основно�
         if(size == null ? eq.size != null : !size.equals(eq.size)) {
             return false;
         }
-        if(gender != eq.gender) {
+        if(genderStyle != eq.genderStyle) {
             return false;
         }
         return true;
@@ -75,7 +75,7 @@ public abstract class BaseMotoEquipment extends MotoEquipment{ //основно�
     public int hashCode() {
         int hash = 3;
         hash = 29 * hash + Objects.hashCode(this.size);
-        hash = 29 * hash + Objects.hashCode(this.gender);
+        hash = 29 * hash + Objects.hashCode(this.genderStyle);
         return hash;
     }
 
@@ -92,8 +92,8 @@ public abstract class BaseMotoEquipment extends MotoEquipment{ //основно�
         str.append(str1);
         str.append(", size: ");
         str.append(size);
-        str.append(", gender: ");
-        str.append(gender);
+        str.append(", genderStyle: ");
+        str.append(genderStyle);
        
         return str.toString(); 
     }
@@ -109,13 +109,13 @@ public abstract class BaseMotoEquipment extends MotoEquipment{ //основно�
         return size;
     }
     
-    public void setGender(String gender) throws ProjectException{
+    public void setGenderStyle(String gender) throws ProjectException{
         if (gender == null || gender.isEmpty()) {
             throw new ProjectException("BaseMotoEquipment.gender == null or empty.");
         }
         
         try {
-            this.gender = GenderStyle.valueOf(gender);
+            this.genderStyle = GenderStyle.valueOf(gender);
         }
         catch(IllegalArgumentException e) {
             throw new ProjectException("BaseMotoEquipment: = " + gender
@@ -124,8 +124,8 @@ public abstract class BaseMotoEquipment extends MotoEquipment{ //основно�
 
     }
     
-    public String getGender(){
-        return gender.toString();
+    public String getGenderStyle(){
+        return genderStyle.toString();
     }
     
  

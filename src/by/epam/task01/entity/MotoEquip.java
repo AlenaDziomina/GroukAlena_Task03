@@ -8,6 +8,8 @@ package by.epam.task01.entity;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlAnyElement;
@@ -27,21 +29,21 @@ import javax.xml.bind.annotation.XmlType;
 public class MotoEquip {
 
     @XmlAnyElement
-    private List<MotoEquipment> equip;
+    private Set<MotoEquipment> equip;
 
     public MotoEquip() {
-        this.equip = new ArrayList<>();
+        this.equip = new TreeSet<>();
     }
 
     
-    public List<MotoEquipment> getMotoEquipment() {
+    public Set<MotoEquipment> getMotoEquipment() {
         if (equip == null) {
-            equip = new ArrayList<>();
+            equip = new TreeSet<>();
         }
         return this.equip;
     }
     
-    public void setList(ArrayList<MotoEquipment> equip) {
+    public void setList(Set<MotoEquipment> equip) {
         this.equip = equip;
     }
     
@@ -51,6 +53,6 @@ public class MotoEquip {
     
     @Override 
     public String toString() {
-        return "EQUIP [list=" + equip + "]";
+        return "EQUIP [" + equip + "]";
     }
 }

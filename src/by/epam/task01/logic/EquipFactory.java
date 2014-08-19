@@ -33,7 +33,7 @@ public class EquipFactory {
         MotoEquipment newEq = buildEquip(className, id, name);      
             
         for (String[] arg : args){    
-            if (arg[0] != null ) {
+            if (!"class".equals(arg[0]) && !"name".equals(arg[0])  && !"id".equals(arg[0])) {
                 try {
                     setProperties(newEq, arg);
                 } catch (NullInitException | LogicException ex) {
@@ -49,7 +49,6 @@ public class EquipFactory {
         
         for (String[] arg : args) {
             if ("class".equals(arg[0]) && arg.length >= 2) {
-                arg[0] = null;
                 return arg[1];
             }
         }
@@ -59,7 +58,6 @@ public class EquipFactory {
     private static int findId(String[]... args) throws NullInitException {
         for (String[] arg : args) {
             if ("id".equals(arg[0]) && arg.length >= 2) {
-                arg[0] = null;
                 return Integer.parseInt(arg[1]);
             }
         }
@@ -69,7 +67,6 @@ public class EquipFactory {
     private static String findName(String[][] args) throws NullInitException {
         for (String[] arg : args) {
             if ("name".equals(arg[0]) && arg.length >= 2) {
-                arg[0] = null;
                 return arg[1];
             }
         }
@@ -99,6 +96,7 @@ public class EquipFactory {
         if(arg == null || arg.length < 3) {
             throw new NullInitException("SetProperties: arg == null.");
         }
+        
         Object val = factoryConvertor(arg[1], arg[2]);
         Class<? extends MotoEquipment> cl = obj.getClass();
         Class<?> type = val.getClass();

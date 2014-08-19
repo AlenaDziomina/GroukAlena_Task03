@@ -75,13 +75,13 @@ public abstract class EquipComparator implements Comparator<MotoEquipment> {
                 String gender2;
                 
                 try {
-                    gender1 = ((BaseMotoEquipment)eq1).getGender();
+                    gender1 = ((BaseMotoEquipment)eq1).getGenderStyle();
                 } catch (Exception ex) {
                     gender1 = "";
                 }
                 
                 try {
-                    gender2 = ((BaseMotoEquipment)eq2).getGender();
+                    gender2 = ((BaseMotoEquipment)eq2).getGenderStyle();
                 } catch (Exception ex) {
                     gender2 = "";
                 }

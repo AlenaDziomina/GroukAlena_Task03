@@ -9,6 +9,8 @@ package task03;
 import by.epam.task01.entity.Helmet;
 import by.epam.task01.entity.MotoEquip;
 import by.epam.task01.entity.RefBaseEquip;
+import by.epam.task01.logic.EquipSaxBuilder;
+import by.epam.task01.logic.EquipStaxBuilder;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -36,35 +38,56 @@ public class Task03 {
     
     public static void main(String[] args) {
         PropertyConfigurator.configure(LOG_PROPERTIES_FILE);
-        //demarsh();
+//        demarsh();
+//        
+//        marsh();
+//        unmarsh();
         
-        marsh();
-        unmarsh();
+        //parsingSax();
+        parsingStax();
     }
     
-//    private static void demarsh(){
-//        JAXBContext jc;
-//        try {
-//            jc = JAXBContext.newInstance("test3");
-//        
-//            Unmarshaller um = jc.createUnmarshaller();
-//            String schemaName = "src/task03/equip.xsd";
-//            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-//        
-//            File schemaLocation = new File(schemaName);
-//            // создание схемы и перадача ее демарашаллизатору
-//            Schema schema = factory.newSchema(schemaLocation);
-//            um.setSchema(schema);
-//            test3.MotoEquip st = (test3.MotoEquip) um.unmarshal(new File("src/task03/equip.xml"));
-//            System.out.println(st);
-//        }
-//        catch (JAXBException e) {
-//            e.printStackTrace();
-//        }
-//        catch (SAXException e) {
-//            e.printStackTrace();
-//        }
-//    }
+    private static void parsingSax(){
+        EquipSaxBuilder saxBuilder = new EquipSaxBuilder();
+        saxBuilder.buildSetEquip("src/task03/equip.xml");
+        System.out.println(saxBuilder.getMotoEquip());
+    }
+    
+    private static void parsingStax() {
+        EquipStaxBuilder staxBuilder = new EquipStaxBuilder();
+        staxBuilder.buildSetEquip("src/task03/equip.xml");
+        System.out.println(staxBuilder.getMotoEquip());
+    }
+    
+    private static void demarsh(){
+        JAXBContext jc;
+        try {
+            jc = JAXBContext.newInstance("marh");
+        
+            Unmarshaller um = jc.createUnmarshaller();
+            String schemaName = "src/task03/equip.xsd";
+            SchemaFactory factory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+        
+            File schemaLocation = new File(schemaName);
+            // создание схемы и перадача ее демарашаллизатору
+            Schema schema = factory.newSchema(schemaLocation);
+            um.setSchema(schema);
+            marh.MotoEquip st = (marh.MotoEquip) um.unmarshal(new File("src/task03/equip.xml"));
+            System.out.println(st.getMotoEquipment().toString());
+            
+            Marshaller m = jc.createMarshaller();
+            m.setSchema(schema);
+            m.marshal(st, new FileOutputStream("src/task03/equip2.xml"));
+        }
+        catch (JAXBException e) {
+            e.printStackTrace();
+        }
+        catch (SAXException e) {
+            e.printStackTrace();
+        } catch (FileNotFoundException ex) {
+            java.util.logging.Logger.getLogger(Task03.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 
     private static void marsh() {
         try {
@@ -105,5 +128,7 @@ public class Task03 {
             e.printStackTrace();
         }
     }
+
+   
     
 }

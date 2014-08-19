@@ -72,7 +72,7 @@ public class EquippedMotorcyclistFactory {
             
             if (args[0].equals(obj.getClass().getSimpleName())
                     && args[1].equals(((MainEquip)obj).getSize())
-                    && args[2].equals(((MainEquip)obj).getGender())
+                    && args[2].equals(((MainEquip)obj).getGenderStyle())
                     && args[3].equals(((MainEquip)obj).getMotoType())) {
                 return obj;
             }                 
