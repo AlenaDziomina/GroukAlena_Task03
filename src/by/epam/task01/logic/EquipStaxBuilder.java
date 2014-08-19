@@ -27,23 +27,19 @@ import static task03.Task03.localLog;
  *
  * @author Helena.Grouk
  */
-public class EquipStaxBuilder {
+public class EquipStaxBuilder extends AbstractEquipBuilder {
     private final static Pattern pat = Pattern.compile("-");
-    private final MotoEquip equip;
+    //private final MotoEquip equip;
     private final XMLInputFactory inputFactory;
     private String[] currentProp;
     private ArrayList<String[]> atrs;
     
     public EquipStaxBuilder(){
-        equip = new MotoEquip();
         atrs = new ArrayList<>();
         inputFactory = XMLInputFactory.newInstance();
     }
     
-    public MotoEquip getMotoEquip() {
-        return equip;
-    }
-
+    @Override
     public void buildSetEquip(String fileName) {
         FileInputStream inputStream = null;
         XMLStreamReader reader;

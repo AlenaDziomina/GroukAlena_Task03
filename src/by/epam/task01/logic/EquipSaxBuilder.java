@@ -17,10 +17,10 @@ import static task03.Task03.localLog;
  *
  * @author Helena.Grouk
  */
-public class EquipSaxBuilder {
+public class EquipSaxBuilder extends AbstractEquipBuilder {
     
-    private MotoEquip magaz;
-    private EquipHandler eqh;
+    //private MotoEquip magaz;
+    private final EquipHandler eqh;
     private XMLReader reader;
     
     public EquipSaxBuilder(){
@@ -33,10 +33,12 @@ public class EquipSaxBuilder {
         }
     }
     
+    @Override
     public void buildSetEquip(String fileName) {
         try {
             // разбор XML-документа
             reader.parse(fileName);
+            equip = eqh.getEquip();
         }
         catch (SAXException e) {
             System.err.print("ошибка SAX парсера: " + e);
@@ -46,9 +48,4 @@ public class EquipSaxBuilder {
         }
     }
 
-    public MotoEquip getMotoEquip() {
-        return eqh.getEquip();
-    }
-    
-    
 }

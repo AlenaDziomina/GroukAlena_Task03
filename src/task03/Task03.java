@@ -9,6 +9,8 @@ package task03;
 import by.epam.task01.entity.Helmet;
 import by.epam.task01.entity.MotoEquip;
 import by.epam.task01.entity.RefBaseEquip;
+import by.epam.task01.logic.AbstractEquipBuilder;
+import by.epam.task01.logic.EquipBuilderFactory;
 import by.epam.task01.logic.EquipSaxBuilder;
 import by.epam.task01.logic.EquipStaxBuilder;
 import java.io.File;
@@ -43,20 +45,31 @@ public class Task03 {
         marsh();
 //        unmarsh();
         
-        parsingSax();
-        parsingStax();
+        EquipBuilderFactory eFactory = new EquipBuilderFactory();
+        AbstractEquipBuilder builder = eFactory.createStudentBuilder("sax");
+        builder.buildSetEquip("src/task03/equip.xml");
+        System.out.println(builder.getEquip());
+        builder = eFactory.createStudentBuilder("stax");
+        builder.buildSetEquip("src/task03/equip.xml");
+        System.out.println(builder.getEquip());
+        builder = eFactory.createStudentBuilder("dom");
+        builder.buildSetEquip("src/task03/equip.xml");
+        System.out.println(builder.getEquip());
+        
+        //parsingSax();
+        //parsingStax();
     }
     
     private static void parsingSax(){
         EquipSaxBuilder saxBuilder = new EquipSaxBuilder();
         saxBuilder.buildSetEquip("src/task03/equip.xml");
-        System.out.println(saxBuilder.getMotoEquip());
+        System.out.println(saxBuilder.getEquip());
     }
     
     private static void parsingStax() {
         EquipStaxBuilder staxBuilder = new EquipStaxBuilder();
         staxBuilder.buildSetEquip("src/task03/equip.xml");
-        System.out.println(staxBuilder.getMotoEquip());
+        System.out.println(staxBuilder.getEquip());
     }
     
     private static void demarsh(){
