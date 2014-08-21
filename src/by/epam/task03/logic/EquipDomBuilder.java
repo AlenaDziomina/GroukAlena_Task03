@@ -6,8 +6,8 @@
 
 package by.epam.task03.logic;
 
-import by.epam.task03.ProjectExeptions.NullInitException;
-import by.epam.task03.ProjectExeptions.ProjectException;
+import by.epam.task03.exeption.NullInitException;
+import by.epam.task03.exeption.ProjectException;
 import by.epam.task03.entity.MotoEquipment;
 import java.io.IOException;
 import java.util.ArrayList;

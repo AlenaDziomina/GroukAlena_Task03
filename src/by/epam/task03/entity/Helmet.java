@@ -6,7 +6,7 @@
 
 package by.epam.task03.entity;
 
-import by.epam.task03.ProjectExeptions.ProjectException;
+import by.epam.task03.exeption.ProjectException;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;

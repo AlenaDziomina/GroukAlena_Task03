@@ -6,7 +6,7 @@
 
 package by.epam.task03.entity;
 
-import by.epam.task03.ProjectExeptions.ProjectException;
+import by.epam.task03.exeption.ProjectException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;

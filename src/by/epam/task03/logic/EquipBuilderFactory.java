@@ -6,7 +6,8 @@
 
 package by.epam.task03.logic;
 
-import by.epam.task03.ProjectExeptions.NullInitException;
+import by.epam.task03.exeption.NullInitException;
+import org.apache.commons.lang3.EnumUtils;
 
 /**
  *
@@ -16,12 +17,15 @@ public abstract class EquipBuilderFactory {
     
     private enum TypeParser { SAX, STAX, DOM }
     public static AbstractEquipBuilder createStudentBuilder(String typeParser) throws NullInitException {
-        TypeParser type = TypeParser.valueOf(typeParser.toUpperCase());
-        switch (type) {
-            case DOM: return new EquipDomBuilder();
-            case STAX: return new EquipStaxBuilder();
-            case SAX: return new EquipSaxBuilder();
-            default: throw new EnumConstantNotPresentException(type.getDeclaringClass(),type.name());
+        if (EnumUtils.isValidEnum(TypeParser.class, typeParser.toUpperCase())) {
+            TypeParser type = TypeParser.valueOf(typeParser.toUpperCase());
+            switch (type) {
+                case DOM: return new EquipDomBuilder();
+                case STAX: return new EquipStaxBuilder();
+                case SAX: return new EquipSaxBuilder();
+                default: throw new EnumConstantNotPresentException(type.getDeclaringClass(),type.name());
+            }
         }
+        return null;
     }
 }

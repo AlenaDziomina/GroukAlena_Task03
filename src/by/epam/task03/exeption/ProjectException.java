@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package by.epam.task03.ProjectExeptions;
+package by.epam.task03.exeption;
 
 import static by.epam.task03.main.Task03.localLog;
 
@@ -16,10 +16,18 @@ import static by.epam.task03.main.Task03.localLog;
  */
 public class ProjectException extends Exception{
     
+    protected String msg;
+    
     public ProjectException(){}
 
     public ProjectException(String msg) {
+        this.msg = msg;
         localLog.error("ProjectException: " + msg);
         localLog.info(this.getStackTrace());
+    }
+    
+    @Override
+    public String getMessage(){
+        return msg;
     }
 }

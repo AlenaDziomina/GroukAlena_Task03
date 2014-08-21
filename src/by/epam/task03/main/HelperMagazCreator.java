@@ -6,7 +6,7 @@
 
 package by.epam.task03.main;
 
-import by.epam.task03.ProjectExeptions.ProjectException;
+import by.epam.task03.exeption.ProjectException;
 import by.epam.task03.entity.MotoEquip;
 import by.epam.task03.entity.MotoEquipment;
 import by.epam.task03.logic.EquipFactory;

@@ -6,7 +6,7 @@
 
 package by.epam.task03.entity;
 
-import by.epam.task03.ProjectExeptions.ProjectException;
+import by.epam.task03.exeption.ProjectException;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;

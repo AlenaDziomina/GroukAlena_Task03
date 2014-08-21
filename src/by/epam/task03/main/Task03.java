@@ -6,7 +6,7 @@
 
 package by.epam.task03.main;
 
-import by.epam.task03.ProjectExeptions.NullInitException;
+import by.epam.task03.exeption.NullInitException;
 import by.epam.task03.entity.Helmet;
 import by.epam.task03.entity.MotoEquip;
 import by.epam.task03.entity.RefBaseEquip;

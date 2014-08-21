@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package by.epam.task03.ProjectExeptions;
+package by.epam.task03.exeption;
 
 import static by.epam.task03.main.Task03.localLog;
 
@@ -16,16 +16,18 @@ import static by.epam.task03.main.Task03.localLog;
 public class LogicException extends ProjectException {
     
     Exception ex;
-    
+
     public LogicException(){}
     
     public LogicException(String msg) {
+        this.msg = msg;
         localLog.error("LogicException " + msg);
         localLog.info(this.getStackTrace());
     }
     
     public LogicException(String msg, Exception ex) {
         this.ex = ex;
+        this.msg = msg;
         localLog.error("LogicException " + msg);
         localLog.info(this.getStackTrace());
         localLog.info(ex.getMessage(), ex);

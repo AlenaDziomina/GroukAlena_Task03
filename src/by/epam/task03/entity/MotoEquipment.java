@@ -6,7 +6,7 @@
 
 package by.epam.task03.entity;
 
-import by.epam.task03.ProjectExeptions.ProjectException;
+import by.epam.task03.exeption.ProjectException;
 import java.math.BigInteger;
 import java.util.Objects;
 import javax.xml.bind.annotation.XmlAccessType;

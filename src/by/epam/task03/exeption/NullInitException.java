@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 
-package by.epam.task03.ProjectExeptions;
+package by.epam.task03.exeption;
 
 import static by.epam.task03.main.Task03.localLog;
 
@@ -19,6 +19,7 @@ public class NullInitException extends ProjectException {
     public NullInitException(){}
     
     public NullInitException(String msg) {
+        this.msg = msg;
         localLog.error("NullInitException " + msg);
         localLog.info(this.getStackTrace());
     }

@@ -6,12 +6,12 @@
 
 package by.epam.task03.logic;
 
-import by.epam.task03.ProjectExeptions.NullInitException;
+import by.epam.task03.exeption.NullInitException;
 import java.io.IOException;
 import org.xml.sax.SAXException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.XMLReaderFactory;
-import by.epam.task03.ProjectExeptions.ProjectException;
+import by.epam.task03.exeption.ProjectException;
 import by.epam.task03.entity.MotoEquip;
 import by.epam.task03.entity.MotoEquipment;
 import java.util.ArrayList;
